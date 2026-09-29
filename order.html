@@ -1,0 +1,576 @@
+<!-- shop.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - RamimsCarShopBD</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-car-alt"></i>
+                <span>Ramims<span class="highlight">CarShop</span>BD</span>
+            </a>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="shop.html" class="nav-link active"><i class="fas fa-store"></i> Shop</a>
+                <a href="order.html" class="nav-link"><i class="fas fa-shopping-cart"></i> Order</a>
+                <a href="billing.html" class="nav-link"><i class="fas fa-wallet"></i> Billing</a>
+                <a href="help.html" class="nav-link"><i class="fas fa-headset"></i> Help</a>
+            </div>
+            <div class="nav-right">
+                <div class="balance-badge" onclick="window.location.href='billing.html'">
+                    <i class="fas fa-wallet"></i>
+                    <span id="navBalance">$0.00</span>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Header -->
+    <section class="page-header">
+        <div class="page-header-bg" style="background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920')"></div>
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <h1><i class="fas fa-store"></i> Our Car Collection</h1>
+            <p>Browse 20 trending premium cars at the best prices</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Shop</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search & Filter -->
+    <section class="shop-controls">
+        <div class="container">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchCar" placeholder="Search cars by name, brand..." onkeyup="filterCars()">
+            </div>
+            <div class="filter-tags">
+                <button class="filter-tag active" onclick="filterByCategory('all', this)">All Cars</button>
+                <button class="filter-tag" onclick="filterByCategory('sports', this)">Sports</button>
+                <button class="filter-tag" onclick="filterByCategory('luxury', this)">Luxury</button>
+                <button class="filter-tag" onclick="filterByCategory('suv', this)">SUV</button>
+                <button class="filter-tag" onclick="filterByCategory('electric', this)">Electric</button>
+                <button class="filter-tag" onclick="filterByCategory('sedan', this)">Sedan</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cars Grid -->
+    <section class="shop-section">
+        <div class="container">
+            <div class="shop-grid" id="shopGrid">
+                <!-- Car 1 -->
+                <div class="car-card" data-category="sports" data-name="BMW M4 Competition">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500" alt="BMW M4">
+                        <div class="car-badge">Trending 🔥</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">BMW</div>
+                        <h3 class="car-name">BMW M4 Competition</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 503 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$74,900</div>
+                            <button class="btn-order" onclick="orderCar('BMW M4 Competition', 74900)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 2 -->
+                <div class="car-card" data-category="sports" data-name="Lamborghini Huracán EVO">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=500" alt="Lamborghini">
+                        <div class="car-badge hot">Hot Deal 💥</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">Lamborghini</div>
+                        <h3 class="car-name">Lamborghini Huracán EVO</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 640 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$261,274</div>
+                            <button class="btn-order" onclick="orderCar('Lamborghini Huracán EVO', 261274)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 3 -->
+                <div class="car-card" data-category="luxury" data-name="Mercedes-AMG GT">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=500" alt="Mercedes">
+                        <div class="car-badge new">New ✨</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">Mercedes-Benz</div>
+                        <h3 class="car-name">Mercedes-AMG GT 63</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 585 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$118,600</div>
+                            <button class="btn-order" onclick="orderCar('Mercedes-AMG GT 63', 118600)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 4 -->
+                <div class="car-card" data-category="sports" data-name="Ferrari F8 Tributo">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=500" alt="Ferrari">
+                        <div class="car-badge hot">Premium 👑</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">Ferrari</div>
+                        <h3 class="car-name">Ferrari F8 Tributo</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 710 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$276,550</div>
+                            <button class="btn-order" onclick="orderCar('Ferrari F8 Tributo', 276550)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 5 -->
+                <div class="car-card" data-category="sports" data-name="Porsche 911 Turbo S">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=500" alt="Porsche">
+                        <div class="car-badge">Trending 🔥</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">Porsche</div>
+                        <h3 class="car-name">Porsche 911 Turbo S</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 640 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$207,000</div>
+                            <button class="btn-order" onclick="orderCar('Porsche 911 Turbo S', 207000)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 6 -->
+                <div class="car-card" data-category="luxury" data-name="Audi RS7 Sportback">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500" alt="Audi RS7">
+                        <div class="car-badge new">New ✨</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">Audi</div>
+                        <h3 class="car-name">Audi RS7 Sportback</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 591 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$116,500</div>
+                            <button class="btn-order" onclick="orderCar('Audi RS7 Sportback', 116500)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 7 -->
+                <div class="car-card" data-category="electric" data-name="Tesla Model S Plaid">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=500" alt="Tesla">
+                        <div class="car-badge">Electric ⚡</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">Tesla</div>
+                        <h3 class="car-name">Tesla Model S Plaid</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 1020 HP</span>
+                            <span><i class="fas fa-bolt"></i> Electric</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$89,990</div>
+                            <button class="btn-order" onclick="orderCar('Tesla Model S Plaid', 89990)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 8 -->
+                <div class="car-card" data-category="suv" data-name="Range Rover Sport">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?w=500" alt="Range Rover">
+                        <div class="car-badge">SUV 🚙</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">Land Rover</div>
+                        <h3 class="car-name">Range Rover Sport</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 395 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$83,000</div>
+                            <button class="btn-order" onclick="orderCar('Range Rover Sport', 83000)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 9 -->
+                <div class="car-card" data-category="luxury" data-name="Rolls Royce Ghost">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=500" alt="Rolls Royce">
+                        <div class="car-badge hot">Luxury 👑</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">Rolls Royce</div>
+                        <h3 class="car-name">Rolls Royce Ghost</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 563 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$311,900</div>
+                            <button class="btn-order" onclick="orderCar('Rolls Royce Ghost', 311900)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 10 -->
+                <div class="car-card" data-category="sports" data-name="McLaren 720S">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?w=500" alt="McLaren">
+                        <div class="car-badge">Supercar 🏎️</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">McLaren</div>
+                        <h3 class="car-name">McLaren 720S Spider</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 710 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$315,000</div>
+                            <button class="btn-order" onclick="orderCar('McLaren 720S Spider', 315000)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 11 -->
+                <div class="car-card" data-category="sedan" data-name="BMW 7 Series">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1523983388277-336a66bf9bcd?w=500" alt="BMW 7">
+                        <div class="car-badge new">New ✨</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">BMW</div>
+                        <h3 class="car-name">BMW 7 Series 760i</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 536 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$113,600</div>
+                            <button class="btn-order" onclick="orderCar('BMW 7 Series 760i', 113600)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 12 -->
+                <div class="car-card" data-category="suv" data-name="Mercedes GLE AMG">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1520031441872-265e4ff70366?w=500" alt="GLE">
+                        <div class="car-badge">SUV 🚙</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">Mercedes-Benz</div>
+                        <h3 class="car-name">Mercedes GLE 63 AMG</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 603 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$116,000</div>
+                            <button class="btn-order" onclick="orderCar('Mercedes GLE 63 AMG', 116000)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 13 -->
+                <div class="car-card" data-category="electric" data-name="Porsche Taycan Turbo S">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=500" alt="Taycan">
+                        <div class="car-badge">Electric ⚡</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">Porsche</div>
+                        <h3 class="car-name">Porsche Taycan Turbo S</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 750 HP</span>
+                            <span><i class="fas fa-bolt"></i> Electric</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$187,600</div>
+                            <button class="btn-order" onclick="orderCar('Porsche Taycan Turbo S', 187600)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 14 -->
+                <div class="car-card" data-category="sports" data-name="Aston Martin Vantage">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1596468138838-0f34d4ad6092?w=500" alt="Aston Martin">
+                        <div class="car-badge">Trending 🔥</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">Aston Martin</div>
+                        <h3 class="car-name">Aston Martin Vantage</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 503 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$153,000</div>
+                            <button class="btn-order" onclick="orderCar('Aston Martin Vantage', 153000)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 15 -->
+                <div class="car-card" data-category="suv" data-name="Lamborghini Urus">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1669725083191-02f990bdb673?w=500" alt="Urus">
+                        <div class="car-badge hot">Hot Deal 💥</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">Lamborghini</div>
+                        <h3 class="car-name">Lamborghini Urus S</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 657 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$229,495</div>
+                            <button class="btn-order" onclick="orderCar('Lamborghini Urus S', 229495)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 16 -->
+                <div class="car-card" data-category="sedan" data-name="Mercedes S-Class">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1622200984490-9c0e1db74855?w=500" alt="S-Class">
+                        <div class="car-badge">Luxury 👑</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">Mercedes-Benz</div>
+                        <h3 class="car-name">Mercedes S-Class S580</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 496 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Hybrid</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$117,350</div>
+                            <button class="btn-order" onclick="orderCar('Mercedes S-Class S580', 117350)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 17 -->
+                <div class="car-card" data-category="sports" data-name="Chevrolet Corvette Z06">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500" alt="Corvette">
+                        <div class="car-badge">Trending 🔥</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">Chevrolet</div>
+                        <h3 class="car-name">Chevrolet Corvette Z06</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 670 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$113,800</div>
+                            <button class="btn-order" onclick="orderCar('Chevrolet Corvette Z06', 113800)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 18 -->
+                <div class="car-card" data-category="electric" data-name="BMW iX M60">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1636866805684-80ee7b9c3fa9?w=500" alt="BMW iX">
+                        <div class="car-badge">Electric ⚡</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">BMW</div>
+                        <h3 class="car-name">BMW iX M60</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 610 HP</span>
+                            <span><i class="fas fa-bolt"></i> Electric</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$108,900</div>
+                            <button class="btn-order" onclick="orderCar('BMW iX M60', 108900)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 19 -->
+                <div class="car-card" data-category="suv" data-name="Bentley Bentayga">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1563339007-6914d7c59b20?w=500" alt="Bentayga">
+                        <div class="car-badge hot">Premium 👑</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">Bentley</div>
+                        <h3 class="car-name">Bentley Bentayga Speed</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 626 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$246,800</div>
+                            <button class="btn-order" onclick="orderCar('Bentley Bentayga Speed', 246800)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Car 20 -->
+                <div class="car-card" data-category="sedan" data-name="Audi A8 L">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=500" alt="Audi A8">
+                        <div class="car-badge new">New ✨</div>
+                        <div class="car-wishlist"><i class="far fa-heart"></i></div>
+                    </div>
+                    <div class="car-details">
+                        <div class="car-brand">Audi</div>
+                        <h3 class="car-name">Audi A8 L 60 TFSI</h3>
+                        <div class="car-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 453 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                        <div class="car-bottom">
+                            <div class="car-price">$95,900</div>
+                            <button class="btn-order" onclick="orderCar('Audi A8 L 60 TFSI', 95900)">
+                                <i class="fas fa-shopping-cart"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="no-results" id="noResults" style="display:none;">
+                <i class="fas fa-search"></i>
+                <h3>No cars found</h3>
+                <p>Try different search terms or filters</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 RamimsCarShopBD. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
