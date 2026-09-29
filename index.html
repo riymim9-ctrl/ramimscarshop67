@@ -1,0 +1,407 @@
+<!-- index.html (Home Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RamimsCarShopBD - Premium Car Dealership</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="car-loader">
+                <i class="fas fa-car-side"></i>
+            </div>
+            <p>RamimsCarShopBD</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-car-alt"></i>
+                <span>Ramims<span class="highlight">CarShop</span>BD</span>
+            </a>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                <a href="shop.html" class="nav-link"><i class="fas fa-store"></i> Shop</a>
+                <a href="order.html" class="nav-link"><i class="fas fa-shopping-cart"></i> Order</a>
+                <a href="billing.html" class="nav-link"><i class="fas fa-wallet"></i> Billing</a>
+                <a href="help.html" class="nav-link"><i class="fas fa-headset"></i> Help</a>
+            </div>
+            <div class="nav-right">
+                <div class="balance-badge" onclick="window.location.href='billing.html'">
+                    <i class="fas fa-wallet"></i>
+                    <span id="navBalance">$0.00</span>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920')">
+                <div class="slide-overlay"></div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1920')">
+                <div class="slide-overlay"></div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1920')">
+                <div class="slide-overlay"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge animate-fade-down">🏆 #1 Premium Car Dealership in Bangladesh</div>
+            <h1 class="hero-title animate-fade-up">
+                Drive Your <span class="gradient-text">Dream Car</span> Today
+            </h1>
+            <p class="hero-subtitle animate-fade-up">Discover the finest collection of luxury, sports & premium cars at unbeatable prices. Your journey to excellence starts here.</p>
+            <div class="hero-buttons animate-fade-up">
+                <a href="shop.html" class="btn btn-primary btn-glow">
+                    <i class="fas fa-shopping-bag"></i> Explore Cars
+                </a>
+                <a href="#featured" class="btn btn-outline">
+                    <i class="fas fa-play-circle"></i> View Collection
+                </a>
+            </div>
+            <div class="hero-stats animate-fade-up">
+                <div class="stat">
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-label">Cars Sold</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">Car Brands</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-number" data-count="1200">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll Down</p>
+        </div>
+    </section>
+
+    <!-- Brands Marquee -->
+    <section class="brands-section">
+        <div class="brands-marquee">
+            <div class="marquee-content">
+                <span class="brand-item">🏎️ BMW</span>
+                <span class="brand-item">🚗 Mercedes-Benz</span>
+                <span class="brand-item">🏎️ Lamborghini</span>
+                <span class="brand-item">🚗 Ferrari</span>
+                <span class="brand-item">🏎️ Porsche</span>
+                <span class="brand-item">🚗 Audi</span>
+                <span class="brand-item">🏎️ Tesla</span>
+                <span class="brand-item">🚗 Toyota</span>
+                <span class="brand-item">🏎️ Rolls Royce</span>
+                <span class="brand-item">🚗 Bugatti</span>
+                <span class="brand-item">🏎️ BMW</span>
+                <span class="brand-item">🚗 Mercedes-Benz</span>
+                <span class="brand-item">🏎️ Lamborghini</span>
+                <span class="brand-item">🚗 Ferrari</span>
+                <span class="brand-item">🏎️ Porsche</span>
+                <span class="brand-item">🚗 Audi</span>
+                <span class="brand-item">🏎️ Tesla</span>
+                <span class="brand-item">🚗 Toyota</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Why Choose Us</span>
+                <h2 class="section-title">Why <span class="gradient-text">RamimsCarShopBD</span>?</h2>
+                <p class="section-subtitle">We provide the best car buying experience in Bangladesh</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>100% Verified Cars</h3>
+                    <p>Every car goes through rigorous inspection and verification process</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Best Price Guarantee</h3>
+                    <p>We offer the most competitive prices in the market</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Home Delivery</h3>
+                    <p>Get your dream car delivered right to your doorstep</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our support team is always ready to help you</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>Easy Returns</h3>
+                    <p>Not satisfied? Return within 7 days hassle-free</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Warranty Included</h3>
+                    <p>All cars come with comprehensive warranty coverage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Cars -->
+    <section class="featured-cars" id="featured">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🔥 Hot Deals</span>
+                <h2 class="section-title">Featured <span class="gradient-text">Cars</span></h2>
+                <p class="section-subtitle">Hand-picked premium cars just for you</p>
+            </div>
+            <div class="cars-showcase">
+                <div class="showcase-card">
+                    <div class="showcase-img">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600" alt="BMW M4">
+                        <div class="showcase-badge">Featured</div>
+                        <div class="showcase-overlay">
+                            <a href="shop.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                    <div class="showcase-info">
+                        <h3>BMW M4 Competition</h3>
+                        <div class="showcase-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 503 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-cog"></i> Auto</span>
+                        </div>
+                        <div class="showcase-price">$74,900</div>
+                    </div>
+                </div>
+                <div class="showcase-card large">
+                    <div class="showcase-img">
+                        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800" alt="Lamborghini">
+                        <div class="showcase-badge hot">🔥 Hot</div>
+                        <div class="showcase-overlay">
+                            <a href="shop.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                    <div class="showcase-info">
+                        <h3>Lamborghini Huracán EVO</h3>
+                        <div class="showcase-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 640 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-cog"></i> Auto</span>
+                        </div>
+                        <div class="showcase-price">$261,274</div>
+                    </div>
+                </div>
+                <div class="showcase-card">
+                    <div class="showcase-img">
+                        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600" alt="Mercedes">
+                        <div class="showcase-badge new">New</div>
+                        <div class="showcase-overlay">
+                            <a href="shop.html" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                    <div class="showcase-info">
+                        <h3>Mercedes-AMG GT</h3>
+                        <div class="showcase-specs">
+                            <span><i class="fas fa-tachometer-alt"></i> 523 HP</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                            <span><i class="fas fa-cog"></i> Auto</span>
+                        </div>
+                        <div class="showcase-price">$118,600</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Categories -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Categories</span>
+                <h2 class="section-title">Browse by <span class="gradient-text">Category</span></h2>
+            </div>
+            <div class="category-grid">
+                <div class="category-card" onclick="window.location.href='shop.html'">
+                    <div class="category-icon">🏎️</div>
+                    <h3>Sports Cars</h3>
+                    <p>8 Cars Available</p>
+                </div>
+                <div class="category-card" onclick="window.location.href='shop.html'">
+                    <div class="category-icon">🚙</div>
+                    <h3>SUV</h3>
+                    <p>5 Cars Available</p>
+                </div>
+                <div class="category-card" onclick="window.location.href='shop.html'">
+                    <div class="category-icon">🚗</div>
+                    <h3>Sedan</h3>
+                    <p>4 Cars Available</p>
+                </div>
+                <div class="category-card" onclick="window.location.href='shop.html'">
+                    <div class="category-icon">⚡</div>
+                    <h3>Electric</h3>
+                    <p>3 Cars Available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Testimonials</span>
+                <h2 class="section-title">What Our <span class="gradient-text">Clients Say</span></h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Amazing experience! Got my dream BMW delivered to my doorstep. Best car dealership in BD!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div>
+                            <h4>Mahmudul Rahman</h4>
+                            <span>Dhaka, BD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"The best prices I've found anywhere. Their support team is incredibly helpful and responsive!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SA</div>
+                        <div>
+                            <h4>Sakib Ahmed</h4>
+                            <span>Chittagong, BD</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"Purchased a Mercedes-AMG. The whole process was smooth and transparent. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">NK</div>
+                        <div>
+                            <h4>Nusrat Khan</h4>
+                            <span>Sylhet, BD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Find Your <span class="gradient-text">Dream Car</span>?</h2>
+                <p>Browse our collection of 20+ premium cars and drive home your dream today!</p>
+                <div class="cta-buttons">
+                    <a href="shop.html" class="btn btn-primary btn-glow btn-lg">
+                        <i class="fas fa-shopping-bag"></i> Shop Now
+                    </a>
+                    <a href="help.html" class="btn btn-outline btn-lg">
+                        <i class="fas fa-phone"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-car-alt"></i>
+                        <span>Ramims<span class="highlight">CarShop</span>BD</span>
+                    </div>
+                    <p>Your trusted premium car dealership in Bangladesh. Drive your dreams with us.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/8801607643869"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="order.html">Orders</a>
+                    <a href="billing.html">Billing</a>
+                    <a href="help.html">Help</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Car Brands</h3>
+                    <a href="shop.html">BMW</a>
+                    <a href="shop.html">Mercedes-Benz</a>
+                    <a href="shop.html">Lamborghini</a>
+                    <a href="shop.html">Ferrari</a>
+                    <a href="shop.html">Tesla</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> 01607643869</p>
+                    <p><i class="fab fa-whatsapp"></i> 01607643869</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Bangladesh</p>
+                    <p><i class="fas fa-envelope"></i> info@ramimscarshop.bd</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RamimsCarShopBD. All Rights Reserved. | Premium Car Dealership</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
